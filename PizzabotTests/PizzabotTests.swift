@@ -24,6 +24,7 @@ class PizzabotTests: XCTestCase {
 
     func testPizzabot() {
         XCTAssertEqual(pizzaBotVC?.pizzabot(path: "5x5 (1, 3) (4, 4)"), "E N N N D E E E N D")
+        XCTAssertEqual(pizzaBotVC?.pizzabot(path: "5x5 (1,3)  ( 4,  4 )"), "E N N N D E E E N D")
         XCTAssertEqual(pizzaBotVC?.pizzabot(path: "5x5 (1, 3) (4, 4)."), "E N N N D E E E N D")
         XCTAssertEqual(pizzaBotVC?.pizzabot(path: " 5x5 (1, 3) (4, 4) "), "E N N N D E E E N D")
         XCTAssertEqual(pizzaBotVC?.pizzabot(

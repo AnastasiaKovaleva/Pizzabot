@@ -156,11 +156,9 @@ extension PizzabotViewController {
         var pathString = path.replacingOccurrences(of: sizeString, with: "")
         pathString.removeFirst()
 
-        let coordinatesString = pathString
-            .components(separatedBy: CharacterSet(charactersIn: "()"))
-            .filter { $0 != "" && $0 != " " }
+        let coordinatesString = pathString.replacingOccurrences(of: " ", with: "").components(separatedBy: CharacterSet(charactersIn: "()")).filter { $0 != "" && $0 != " " }
 
-        let coordinates: [Coordinate] = coordinatesString.map { $0.toTuple(separator: ", ") }
+        let coordinates: [Coordinate] = coordinatesString.map { $0.toTuple(separator: ",") }
 
         var isError = false
         coordinates.forEach { coordinate in

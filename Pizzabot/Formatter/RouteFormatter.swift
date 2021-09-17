@@ -16,7 +16,7 @@ final class RouteFormatter: RouteFormat {
 
     func isValid(_ value: String) -> Bool {
         let routeString = obtainRouteString(from: value)
-        let pattern = "^\\d+x\\d+( [(]\\d+, \\d+[)])+$"
+        let pattern = "^\\d+x\\d+ *( *[(] *\\d+, *\\d+ *[)] *)+$"
         let predicate = NSPredicate(format: "SELF MATCHES %@", pattern)
         return predicate.evaluate(with: routeString)
     }
